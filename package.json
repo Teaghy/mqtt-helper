@@ -1,0 +1,38 @@
+{
+  "name": "@teaghy/mqtt-helper",
+  "private": false,
+  "version": "0.0.4",
+  "description": "",
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/mqtt-helper.umd.js",
+  "module": "./dist/mqtt-helper.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "http-server"
+  },
+  "author": "guanhr",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@types/node": "^18.15.12",
+    "http-server": "^14.1.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.20.6",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "dependencies": {
+    "mqtt": "4.3.7",
+    "terser": "^5.17.1"
+  }
+}

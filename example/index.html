@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MQTT</title>
+  </head>
+  <body>
+    <div id="app">
+      <button id="btn">停止</button>
+    </div>
+    <script type="module">
+      import Mqtt from '/dist/index.esm.js';
+      const host = '127.0.0.1';
+      const port = 1883;
+      const client = new Mqtt(`ws://${host}:${port}/mqtt`, {
+        clientId: 'iot_' + Math.random().toString(16).substr(2, 8),
+        username: 'admin',
+        password: '123456',
+      });
+      client.connect();
+      function updateData(data) {
+        console.log(data);
+      }
+      client.subscribe('/node/test', updateData);
+      window.onload = function () {
+        const btn = document.querySelector('#btn')
+        btn.onclick = function () {
+          client.unsubscribe('/node/test', updateData);
+        }   
+      }
+    </script>
+  </body>
+</html>
