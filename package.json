@@ -1,7 +1,7 @@
 {
   "name": "@teaghy/mqtt-helper",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "type": "module",
   "types": "./dist/types/index.d.ts",
@@ -27,6 +27,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Teaghy/mqtt-helper.git"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
